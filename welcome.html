@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: centre;
+            align-items: centre;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #name-box {
+            text-align: centre;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="name-box">
+        <h1>Welcome!</h1>
+        <p>What is your name?</p>
+        <input id="username" type="text" placeholder="Enter your name">
+        <br><br>
+        <button onclick="startIntro()">Continue</button>
+    </div>
+
+    <script>
+        function startIntro() {
+            const name = document.getElementById('username').value.trim();
+            if (name === "") return;
+
+            // Save the name so the homepage can read it
+            localStorage.setItem("username", name);
+
+            // Go to intro animation
+            window.location.href = "intro.html";
+        }
+    </script>
+</body>
+</html>
+

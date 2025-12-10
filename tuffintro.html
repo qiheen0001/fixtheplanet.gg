@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intro</title>
+<style>
+  html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
+    background:black;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Full-screen video */
+  #bg-video {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    z-index:0;
+    transform-origin:center center;
+  }
+
+  /* Welcome text overlay */
+  #welcome-text {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    font-size: clamp(20px, 5vw, 48px);
+    text-align:center;
+    opacity:0;
+  }
+
+  /* Zoom animation */
+  .zoom {
+    animation: zoomVideo 3s forwards ease-in-out;
+  }
+
+  @keyframes zoomVideo {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+  }
+
+  /* Fade in welcome */
+  .fade-in {
+    animation: fadeIn 1s forwards ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity:0; }
+    to { opacity:1; }
+  }
+</style>
+</head>
+<body>
+
+<video id="bg-video" src="tuff.mkv" autoplay muted playsinline></video>
+<div id="welcome-text"></div>
+
+<script>
+const video = document.getElementById('bg-video');
+const welcome = document.getElementById('welcome-text');
+const name = localStorage.getItem('username') || '';
+
+// When video finishes, show welcome and zoom
+video.addEventListener('ended', () => {
+    // Show welcome text
+    welcome.textContent = `Welcome, ${name}!`;
+    welcome.classList.add('fade-in');
+
+    // Zoom video
+    video.classList.add('zoom');
+
+    // Redirect after 2 seconds
+    setTimeout(() => {
+        window.location.href = 'homepage.html';
+    }, 2000);
+});
+</script>
+
+</body>
+</html>
