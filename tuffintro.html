@@ -61,13 +61,13 @@
 </head>
 <body>
 
-<video id="bg-video" src="tuff.mp4" control autoplay playsinline></video>
+<video id="bg-video" src="tuff.mp4" controls autoplay playsinline></video>
 <div id="welcome-text"></div>
 
 <script>
 const video = document.getElementById('bg-video');
 const welcome = document.getElementById('welcome-text');
-let name = localStorage.getItem('name') || 'Guest User';
+let name = localStorage.getItem('username') || 'Guest User';
 
 // When video finishes, show welcome and zoom
 video.addEventListener('ended', () => {
@@ -87,5 +87,4 @@ video.addEventListener('ended', () => {
 
 </body>
 </html>
-
 
