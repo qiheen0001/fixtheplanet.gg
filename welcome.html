@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
 
+    </head>
 <body>
-    <div id="name-box">
-        <h1>Welcome!</h1>
-        <p>What is your name?</p>
-        <input id="username" type="text" placeholder="Enter your name">
-        <br><br>
-        <button onclick="startIntro()">Continue</button>
+    <div>
+        <h1> Welcome!!</h1>
+        <p> Please enter your name..</p>
+        <input id="username" type="text" placeholder="enter your name"></input>
+        <button onClick="introBegin()">Go!!!</button>
     </div>
-
-    <script>
-        function startIntro() {
-            let name = document.getElementById('username').value.trim();
-            if (name === "") return;
-            else {
-                sessionStorage.setItem('namee', name);
-
-                // Go to intro animation
-                window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/tuffintro.html");
-            }
-
-            
-        }
-    </script>
 </body>
+<script>
+    function introBegin(){
+        const name = document.getElementById('username').value.trim();
+        if (name === "") return;
+        localStorage.setItem("username", name);
+        window.location.href = "https://qiheen0001.github.io/fixtheplanet.gg/tuffintro.html"
+    }
+</script>
 </html>
-
-
-
-
