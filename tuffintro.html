@@ -61,18 +61,18 @@
 </head>
 <body>
 
-<video id="bg-video" src="tuff.mkv" autoplay muted playsinline></video>
+<video id="bg-video" src="tuff.mkv" autoplay playsinline></video>
 <div id="welcome-text"></div>
 
 <script>
 const video = document.getElementById('bg-video');
 const welcome = document.getElementById('welcome-text');
-const name = localStorage.getItem('username') || '';
+let name = sessionStorage.getItem('namee') || 'Guest User';
 
 // When video finishes, show welcome and zoom
 video.addEventListener('ended', () => {
     // Show welcome text
-    welcome.textContent = `Welcome, ${name}!`;
+    welcome.textContent = "Welcome, " + name + "!";
     welcome.classList.add('fade-in');
 
     // Zoom video
