@@ -101,7 +101,7 @@ document.getElementById("exp").textContent = "Experience points: " + experience;
     
     <script>
         function exp() {
-            localStorage.setItem("xp", experience +1);
+            localStorage.setItem("xp", JSON.stringify(experience +1));
         }
         function waste() {
             exp()
@@ -134,6 +134,16 @@ document.getElementById("exp").textContent = "Experience points: " + experience;
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
