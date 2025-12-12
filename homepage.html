@@ -55,12 +55,14 @@
 <p id="random-message">Loading...</p>
 </div>
 <p id="exp">Loading...</p>
+<p>Tip: Earn Experience Points (xp for short) by clicking one of buttons. Even if u click the About Us button, u get experience for it shows u attempt to help the earth :)</p>
 <script>
 let experience = localStorage.getItem("xp") || 0;
 const messages = [
     "Pick up 1 piece of trash",
     "Message someone you haven't checked on in a while",
     "Stop doomscrolling for 10 minutes",
+    "Earn experience points and become one of the top in the field of saving the earth, instead of just being some nobody the world can do without."
 ]
 const randomIndex = Math.floor(Math.random() * messages.length);
 document.getElementById("random-message").textContent = messages[randomIndex];
@@ -89,41 +91,49 @@ document.getElementById("exp").textContent = "Experience points: " + experience;
         </div>
     </div>
     <div class="container">
-                <div class="card">
-<button onclick="aboutus()"> About us</button>
-                </div>
+        <div class="card">
+            <button onclick="aboutus()"> About us</button>
+        </div>
         <div class="card">
             <button onclick="forum()">Forum</button>
         </div>
     </div>
     
     <script>
+        function exp() {
+            localStorage.setItem("xp", experience +1);
+        }
         function waste() {
+            exp()
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/reducewaste.html")
         }
         function help() {
+            exp();
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/helpsomeone.html")
         }
         function saveE() {
+            exp();
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/saveenergy.html")
         }
         function saveW() {
+            exp();
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/savewater.html")
         }
         function grow() {
+            exp();
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/growsomething.html")
         }
         function aboutus() {
+            exp();
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/aboutus.html")
         }
         function forum() {
+            exp();
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/forum.html")
         }
     </script>
 </body>
 </html>
-
-
 
 
 
