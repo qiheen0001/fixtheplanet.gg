@@ -52,16 +52,19 @@
 </head>
 <body>
 <div>
-<p id="random-message"></p>
+<p id="random-message">Loading...</p>
 </div>
+<p id="exp">Loading...</p>
 <script>
+let experience = localStorage.getItem("xp") || 0;
 const messages = [
     "Pick up 1 piece of trash",
     "Message someone you haven't checked on in a while",
     "Stop doomscrolling for 10 minutes",
 ]
-    const randomIndex = Math.floor(Math.random() * messages.length);
+const randomIndex = Math.floor(Math.random() * messages.length);
 document.getElementById("random-message").textContent = messages[randomIndex];
+document.getElementById("exp").textContent = "Experience points: " + experience;
 </script>
 </div>
     <div class="hero">
@@ -110,15 +113,21 @@ document.getElementById("random-message").textContent = messages[randomIndex];
         function grow() {
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/growsomething.html")
         }
-                function aboutus() {
+        function aboutus() {
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/aboutus.html")
         }
-                        function aboutus() {
+        function forum() {
             window.location.replace("https://qiheen0001.github.io/fixtheplanet.gg/forum.html")
         }
     </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
