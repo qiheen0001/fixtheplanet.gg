@@ -52,28 +52,27 @@
     </style>
 </head>
 <body>
-<div>
-<p id="random-message">Loading...</p>
-</div>
-<p id="exp">Loading...</p>
-<p>Tip: Earn Experience Points (xp for short) by clicking one of buttons. Even if u click the About Us button, u get experience for it shows u attempt to help the earth :)</p>
-<script>
-let experience = parseInt(localStorage.getItem("xp")) || 0;
-const messages = [
-    "Pick up 1 piece of trash",
-    "Message someone you haven't checked on in a while",
-    "Stop doomscrolling for 10 minutes",
-    "Earn experience points and become one of the top in the field of saving the earth, instead of just being some nobody the world can do without."
-]
-const randomIndex = Math.floor(Math.random() * messages.length);
-document.getElementById("random-message").textContent = messages[randomIndex];
-document.getElementById("exp").textContent = "Experience points: " + experience;
-</script>
-</div>
+
     <div class="hero">
         <h1>Welcome, what do you wanna learn today?</h1>
     </div>
-
+    <div>
+    <p id="random-message">Loading...</p>
+    <p id="exp">Loading...</p>
+    <p>Tip: Earn Experience Points (xp for short) by clicking one of buttons. Even if u click the About Us button, u get experience for it shows u attempt to help the earth :)</p>
+    <script>
+    let experience = parseInt(localStorage.getItem("xp")) || 0;
+    const messages = [
+        "Pick up 1 piece of trash",
+        "Message someone you haven't checked on in a while",
+        "Stop doomscrolling for 10 minutes",
+        "Earn experience points and become one of the top in the field of saving the earth, instead of just being some nobody the world can do without."
+    ]
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    document.getElementById("random-message").textContent = messages[randomIndex];
+    document.getElementById("exp").textContent = "Experience points: " + experience;
+    </script>
+    </div>
     <div class="container">
         <div class="card">
             <button onclick="waste()">🗑️ Reduce Waste</button>
@@ -135,6 +134,7 @@ document.getElementById("exp").textContent = "Experience points: " + experience;
     </script>
 </body>
 </html>
+
 
 
 
