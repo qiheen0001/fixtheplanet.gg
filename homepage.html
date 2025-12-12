@@ -57,7 +57,7 @@
 <p id="exp">Loading...</p>
 <p>Tip: Earn Experience Points (xp for short) by clicking one of buttons. Even if u click the About Us button, u get experience for it shows u attempt to help the earth :)</p>
 <script>
-let experience = localStorage.getItem("xp") || 0;
+let experience = Number(localStorage.getItem("xp")) || 0;
 const messages = [
     "Pick up 1 piece of trash",
     "Message someone you haven't checked on in a while",
@@ -134,15 +134,6 @@ document.getElementById("exp").textContent = "Experience points: " + experience;
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
